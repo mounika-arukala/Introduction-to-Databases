@@ -1,0 +1,101 @@
+In this assignment you will design a database. The design will consist of a conceptual model (e.g., an ER model) and a schema (or physical model). To do the design you may use any ER design tool. MySQL Workbench (Links to an external site.)Links to an external site. is perhaps the easiest to use free, open source tool.
+
+Grading
+The single most important part of a database design is documentation. Document everything in your model. This includes the following.
+
+A description of your miniworld
+
+A detailed description of each entity type, including justification of keys, and sufficiency of attributes
+
+A detailed description of each relationship type, including a justification of participation and cardinality constraints
+
+Provide complete, clear, concise, and relevant documentation.
+
+Groups
+The assignment permits you to work in groups of two, partners are randomly assigned. Please note that the assignment specifies separate tasks for each group member (ALPHA and BETA), as well as some common tasks for the entire group. The group members will be graded separately. A person may choose to do the assignment individually, in which case they must perform the tasks for both group members. In other words, using your group will usually result in less work, but you may choose to do the assignment individually if you so desire, in which case you do the work for both ALPHA and BETA. Decide which person will be ALPHA and which will be BETA, if you have not informed me who will be ALPHA and which will be BETA by Sat. Sep 24th at midnight, I will choose for you. Ideally, each group will be happy and harmonious, but the assignment is structured such that the contribution of each group member can be assessed independently.
+
+ 
+
+Database Modeling
+The assignment is to build an Entity-Relationship model within one of the following areas.
+
+Field biology - Design a database to provide support for the study of an animal species in the field. The database should do tracking, habitat representation, etc.
+
+Sports - Choose a sports-related mini-world, such as a tournament, event, or league.
+
+City planning - Sewage, public transportation, and law enforcement are just three of the many data-intensive activities that city governments undertake.
+
+Art - Choose a field of art, or a museum collection.
+
+Space mission - Design a database for the space shuttle program, Apollo program, or the NASA Mar’s missions.
+
+The areas are incompletely specified, the group is to choose a direction, research the area, and supply the necessary details. You may extend the description to incorporate "reasonable" components that satisfy the various required deliverables, which are listed below. For example, ALPHA needs a many-one relationship type with total participation on the one side. The idea is that each group will tailor the model differently. Collusion between groups is not permitted.
+
+The ER model that the group develops must have five or more entity types, and generally it should not have more than twenty. Make suitable assumptions where necessary and add suitable attributes wherever appropriate.
+
+Deliverables and Submission Instructions
+Create a directory called model that contains the following file (the file extensions may vary depending upon the product that you use.)
+
+er.doc or er.pdf or er.ps - A Word document, PDF or Postscript file with the following sections.
+
+Title page: Title, ALPHA: Name, BETA: Name
+
+ER Diagram - Cut and paste the ER or UML diagram from whatever tool that you decide to use.
+
+Overview - An overview of the entire model (from one to four paragraphs) presenting the model, design decisions, and general assumptions. This is a joint contribution.
+
+List of entity types - Description, attributes, keys, and constraints should be discussed for each entity type. Discuss design decisions for keys.
+
+List of relationship types - Description, attributes, and constraints should be discussed for each relationship type. Discuss all design decisions for participation constraints.
+
+ALPHA - Group member ALPHA's contributions (see below for structure, each deliverable should be addressed). List and discuss how each deliverable is modeled.
+
+BETA - Group member BETA's contributions (see below for structure, each deliverable should be addressed). List and discuss how each deliverable is modeled.
+
+Physical Schema - The physical schema that results from mapping the ER diagram to relations, including any assumptions in the mapping. The Schema can be a list of create table statements. You may include a screen dump of your physical schema if your tool supports it.
+
+ALPHA and BETA may develop each part of the model together, but will be graded (for the most part) independently. The group will combine their results into a single integrated whole.
+
+The following should be accounted for in the documentation associated with your model.
+
+A key should be clearly identified and discussed for each entity type.
+
+Constraints should be identified.
+
+Constraints relevant to maintaining data integrity should be included and de scribed in the documentation.
+
+Please ensure that your ER diagram is clear and aesthetically pleasing.
+
+ALPHA's Contribution
+ALPHA's contribution is a section identifying the relationship type, entity type, constraint, and/or attribute involved in the modeling the following. Important: There will likely not be a specific feature in the design tool to model each kind of thing, so you will have to figure out how to do it in the model by reasoning about the table(s) that are produced. Clearly identify in the document how each kind of thing is modeled in your diagram.
+
+A many-one relationship type with total participation on the one side
+
+A many-many relationship type
+
+A ternary relationship
+
+A disjoint inheritance hierarchy
+
+A composite attribute
+
+A domain constraint
+
+A multivalued attribute
+
+BETA's Contribution
+BETA's contribution is a section identifying the relationship type, entity type, constraint, and/or attribute involved in the modeling the following. Important: There will likely not be a specific feature in the design tool to model each kind of thing, so you will have to figure out how to do it in the model by reasoning about the table(s) that are produced. Clearly identify in the document how each kind of thing is modeled in your diagram.
+
+A one-one relationship type with total participation on at least one side
+
+A one-many relationship type with partial participation on both sides
+
+A relationship with an attribute(s)
+
+An overlapping inheritance hierarchy
+
+A weak-entity type
+
+A reflexive relationship type
+
+A check (integrity constraint on an attribute).

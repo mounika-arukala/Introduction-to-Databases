@@ -1,0 +1,23 @@
+Consider the following three relations, with the schema listed below. Primay keys are underlined.
+Actor (Name, Age)
+Movie (Title, WhenReleased, Cost)
+CastIn (Title, Name)
+CastIn(Title) is a foreign key on Movie(Title). CastIn(Name) is a foreign key on Actor(Name).
+
+Formulate the following queries in relational algebra.
+
+What are the ages of actors?
+What are the titles of movies released in the 1940s?
+Which movies cost more than 1000000 and were released before 1920?
+using selection -
+using intersection -
+What is the age of each actor that was cast in a movie in the 1940s?
+What are the ages of actors that are cast in some movie released before 1920?
+What are the names of actors that were not cast in a movie?
+What are the names of actors that were cast in at least two different movies?
+What are the names of actors that were cast in exactly one movie?
+What are the names of actors that were cast in a movie in at least three consecutive years?
+What are the names of actors that were cast in all of the movies?
+Exercise 2.14
+Exercise 3.12
+Exercise 3.14

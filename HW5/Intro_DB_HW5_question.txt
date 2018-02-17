@@ -1,0 +1,57 @@
+Overview
+Write some queries using a NoSQL database.
+
+Turn in
+Turn in in the files queries.txt using the canvas upload file thingy. You may turn in your assignment as many times as you like.
+
+Grading
+The assignment will be graded for functionality. 
+
+CouchDB
+Your task is to install a NoSQL database using CouchDB (Links to an external site.)Links to an external site. and write some queries.
+
+Here are some destructions on installing and running on MS/Windows  (Links to an external site.)Links to an external site.
+
+Using CouchDB
+Download and configure the software for your system. Then create a database, and within that database a document. To that document add the data in the file data.txtPreview the documentView in a new window. The couchDB lecture notesPreview the documentView in a new window have some useful hints on how to do this.
+
+Deliverables
+A text file, queries.txt, containing solutions in JSON to the following queries. The file should be formatted as follows (values of the fields will vary!). Again, see the couchDB lecture notesPreview the documentView in a new window on how to get this view of the data. 
+
+----View 1: Count the randomArrayItems
+{
+   "_id": "_design/countRandomArrayItems",
+   "_rev": "2-b4e0bf693aea17edffd8a05ea80b9989",
+   "language": "javascript",
+   "views": {
+       "countRandomArrayItems": {
+           "map": "function(doc) {\n  for (var i in doc.data) {\n    var person = doc.data[i];\n    emit(person.name, 1);\n  }\n}",
+           "reduce": "function(keys, values, rereduce) {\n  return values.length;\n}"
+       }
+   }
+}
+----View 2: Names of people with max age by gender and isActive ...
+ 
+
+Count the randomArrayItems.
+Result: 
+
+
+Name(s) of the person(s) with the maximum age, and their age(s) by gender and whether they are active or not.
+Result: 
+
+
+A count of the people by tags, that is, count all the people with the given value in the tags array.
+Result: 
+
+
+The average age of people by company.
+Result: 
+
+
+The JSON of the lattitude, longitude, and address of each employee that has a lattitude of more than 80.
+Result: 
+
+
+Names of people and their friends that start with the letter "J" if they have at least one friend whose name starts with the letter "J".
+Result: 

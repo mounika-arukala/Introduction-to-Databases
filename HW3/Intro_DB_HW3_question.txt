@@ -1,0 +1,78 @@
+Overview
+In this assignment you will create a schema, populate it, and then write some queries. The database you create will be managed using MySQL, Postgres (or some SQL compliant DBMS of your choosing). The data is from www.seanlahman.com/baseball-archive/statistics (Links to an external site.)Links to an external site.. More information on the data is available from that site. The fields are defined here http://seanlahman.com/files/database/readme2014.txt (Links to an external site.)Links to an external site., though I've changed the names of some of the fields. Here is a Preview the documentView in a new windowscreen grab of the part of the ER diagramPreview the documentView in a new window that shows how tables, such as the Master and Appearances tables, are related. A bigger picture of how the tables are Preview the documentView in a new windowrelated can be found here.Preview the documentView in a new window
+
+ 
+
+Choosing a DBMS
+Using MySQL
+If you'd like to use MySQL, it can be downloaded and installed on your home machine (Links to an external site.)Links to an external site.. You will also want to download a query browser. There is MySQL Workbench or HeidiSQL (Links to an external site.)Links to an external site. or something else (there are many such client tools).
+
+ 
+
+Using Postgres
+You may alternatively use Postgres (Links to an external site.)Links to an external site.. To create the database and populate it you may use the script postgres.sqlView in a new window provided herein.
+
+ 
+
+Using SQL Server
+SQL Server limits inserts to 1000 rows at a time, so the sqlserver.sql scriptView in a new window breaks up the data inserts into 999 rows in each transaction. You'll have to create the tables using the postgres.sql script.
+
+ 
+
+Other DBMSs
+You may use a DBMS of your choosing. The SQL scripts to load the data should work on your chosen system. Use the postgres.sqlView in a new window script for the data (it is the generic script). If you have trouble with this script, please e-mail me to let me know.
+
+ 
+
+======================================================== 
+
+Creating the Database
+An SQL script (specific to MySQL) to create the database is available in the file baseball.sqlView in a new window. In the Query Workbench, first create a schema as follows.
+
+  create schema baseball;
+This will create the baseball schema. Make this the default schema. Next open the script and execute it. If you ever need to recreate the database just drop the schema, recreate it, and re-run the script. The database that will be created has twenty-five tables.
+
+======================================================== 
+
+Deliverables and Submission Instructions
+Create a file called queries.sql, which will be a text file containing all your queries for each of the questions given below. Each query will be (at least one) SELECT statement. You may create "helper" views for the queries, but if you do, be sure to give the SQL for the created views. I've added an "answer" for each query. The answers are merely to help you check if your query could be correct, but be careful because an incorrect query might produce a correct answer, and even a correct query may produce a slightly different answer.
+
+LA Dodgers - List the first name and last name of every player that has played at any time in their career for the Los Angeles Dodgers. List each player only once. (answerView in a new window)
+Brooklyn AND/OR LA Dodgers Only - List the first name and last name of every player that has played only for the Los Angeles AND/OR Brooklyn Dodgers (i.e., they did not play for any other team). Note that the answer I give is Los Angeles Dodgers OR Brooklyn Dodgers, but Los Angeles Dodgers AND Brooklyn Dodgers only is fine. List each player only once. (answerView in a new window)
+Gold Glove Dodgers - For each Los Angeles Dodger that has won a "Gold Glove" award, list their first name, last name, position (this is the 'notes' field in the 'awardsplayers' table), and year in which the award was won. Note that a player may win such an award several times. (answerView in a new window)
+World Series Winners - List the name of each team that has won the world series and number of world series that it has won (the column WSWin in the Teams table has a 'Y' value if the team won the world series in that season). Each winner should be listed just once. (answerView in a new window)
+USU batters - List the first name, last name, year played, and batting average (h/ab) of every player from the school named "Utah State University". (answerView in a new window)
+Bumper Salary Teams - List the total salary for two consecutive years, team name, and year for every team that had a total salary which was 1.5 times as much as for the previous year. (answerView in a new window)
+Red Sox Four - List the first name and last name of every player that has batted for the Boston Red Sox in at least four consecutive years. List each player only once. (answerView in a new window)
+Home Run Kings - List the first name, last name, year, and number of HRs of every player that has hit the most home runs in a single season. Order by the year. Note that the 'batting' table has a column 'HR' with the number of home runs hit by a player in that year. (answerView in a new window)
+Third best home runs each year - List the first name, last name, year, and number of HRs of every player that hit the third most home runs for that year. Order by the year. (answerView in a new window)
+Triple happy team mates - List the team name, year, players' names, the number of triples hit (column '3B' in the batting table), in which two or more players on the same team hit 10 or more triples each. (answerView in a new window)
+Ranking the teams - Rank each team in terms of the winning percentage (wins divided by (wins + losses)) over its entire history. Consider a "team" to be a team with the same name, so if the team changes name, it is considered to be two different teams. Show the team name, win percentage, and the rank. (answerView in a new window)
+Casey Stengel's Pitchers - List the year, first name, and last name of each pitcher who was a on a team managed by Casey Stengel (pitched in the same season on a team managed by Casey). (answerView in a new window)
+Two degrees from Yogi Berra - List the name of each player who appeared on a team with a player that was at one time was a teamate of Yogi Berra. So suppose player A was a teamate of Yogi Berra. Then player A is one-degree of separation from Yogi Berra. Let player B be related to player A because A played on a team in the same year with player A. Then player A is two-degrees of separation from player A. (answerView in a new window)
+Rickey's travels - List all of the teams for which Rickey Henderson did not play. Note that because teams come and go, limit your answer to only the teams that were in existence while Rickey Henderson was a player. List each such team once. (answerView in a new window)
+The queries.sql file should have the following format (note, two dashes '--' at the start of a line indicates a comment). Please add other comments as needed.
+
+...
+-- Query 5 - USU batters
+-- List the first name, last name, year played, 
+-- and batting average (h/ab) of every player
+-- from the school named "Utah State University".
+SELECT ...
+FROM ... 
+WHERE ...
+-- Query 6 ...
+-- ...
+...
+Be sure to include the number for each query, the English text describing the query and the SQL text for the query. If the query does not work or is incomplete, please comment out the SQL text and put in appropriate comments as to why the query does not work. Our plan is to run the queries on some tables to ensure that they perform correctly.
+
+ 
+
+Grading
+Good programming style is always important. Your code should be clear, concise, and have appropriate comments.
+
+ 
+
+EXTRA:
+
+Some have request extra time on which to work this assignment. I will give you til next saturday. If you have already turned it or do so by the original deadline, you can earn an extra 20 points.

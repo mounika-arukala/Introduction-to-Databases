@@ -1,0 +1,57 @@
+Homework5:
+Question 1:
+{
+   "_id": "_design/Answer 1",
+   "_rev": "1-b17883e3b363b0c01ec90be8c714731c",
+   "language": "javascript",
+   "views": {
+       "Answer 1": {
+           "map": "function(doc) {\nfor(var s in doc.data){\nvar temp=doc.data[s];  \nemit(temp.randomArrayItem,1);\n}\n}\n",
+           "reduce": "function(key,value,rereduce)\n{return value.length;}"
+       }
+   }
+}
+Question 3:
+{
+   "_id": "_design/answer 3",
+   "_rev": "2-552bcd302c4e8afb8d88dfe9566663c3",
+   "language": "javascript",
+   "views": {
+       "answer 3": {
+           "map": "function(doc) {\nfor(var s in doc.data)\n{\nvar temp=doc.data[s];\nfor(var m=0;m<temp.tags.length;m++)\n{emit(temp.tags[m],1);}}}",
+           "reduce": "function(keys,values,rereduce){return values.length;}"
+       }
+   }
+}
+Question 4:
+{
+   "_id": "_design/answer 4",
+   "_rev": "7-29f529e4936f95bc32ea8aacc06f34b0",
+   "language": "javascript",
+   "views": {
+       "answer 4": {
+           "map": "function(doc) {\nfor(var s in doc.data){\nvar temp=doc.data[s];  \nemit(temp.company, temp.age);\n}\n}\n",
+           "reduce": "function(key,value,rereduce)\n{return sum(value)/value.length;}"
+       }
+   }
+}
+Question 5:
+{
+   "_id": "_design/answer 5",
+   "_rev": "3-641390e4997266f1e1534410e685318f",
+   "language": "javascript",
+   "views": {
+       "answer 5": {
+           "map": "function(doc) {\nfor(var s in doc.data)\n{\nvar temp=doc.data[s];\nif(temp.latitude>80)\nemit(temp.id,{latitude:temp.latitude,longitude:temp.longitude,address:temp.address})\n}\n}\n"
+       }
+   }
+}
+Question 6:
+{
+   "_id": "_design/answer 6",
+   "_rev": "4-62e353c0dd754917ac31fe842e7e0515",
+   "language": "javascript",
+   "views": {
+       "answer 6": {
+           "map": "function(doc) {\nfor(var temp in doc.data){\n\tvar human=doc.data[temp];\n\tif(human.friends.length!=0){\n\t\tfor(var s=0;s<human.friends.length;s++){\n\t\tvar namefriend=human.friends[k].name;\n\t\tif(namefriend.charAt(0)==\"J\"){\n\t\t\temit(human.name,namefriend);\n\t\t\t}\n\t\t}\n\t}\n}\n}"
+       }
